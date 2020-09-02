@@ -4,15 +4,26 @@ import styled from 'styled-components'
 import Produto from './Produto'
 
 const Container = styled.div`
+  display: grid;
+  grid-template-columns:  1fr 1fr 1fr 1fr;
+  gap
   border: 1px solid black;
+
 `
+
+
 
 class GridDeProdutos extends Component {
   render() {
     return (
+      
       <Container>
-        <h2>Grid de Produtos</h2>
         <Produto />
+        <Produto />
+        <Produto />
+        <Produto />
+        <Produto />
+
       </Container>
     )
   }
