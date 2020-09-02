@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styled from "styled-components"
-import image from '../Logo-Horizontal-03-1.png';
-import Button from '@material-ui/core/Button';
+import image from '../img/LogoComLogoMarca.png';
+import {Button} from '@material-ui/core';
 
 const Inicial = styled.div`
 height:100vh;
@@ -9,8 +9,25 @@ display: flex;
 justify-content: center;
 flex-direction: column;
 align-items: center;
+background-color: #FFFCEF;
 
 `;
+const ContainerBut = styled.div`
+display: flex;
+width: 40vw;
+justify-content: space-around;
+
+`;
+
+const BotaoComprar = styled(Button)`
+width:200px;
+background-color: #43ADA5;
+`;
+const BotaoVender = styled(Button)`
+width:200px;
+background-color: #FCCA64;
+
+`
 
 export default function PaginaInicial()  {
 
@@ -19,12 +36,12 @@ export default function PaginaInicial()  {
     return (
       <Inicial>
 
-        <p><img src={image} style={{width: "15vw", height: "20vh", objectFit: "cover"}} /></p>
+        <p><img src={image} style={{width: "25vw", height: "30vh", objectFit: "contain", marginBottom: "10vh"}} /></p>
         
-        <div>
-        <Button size="large" variant="contained" color="primary">Quero Comprar</Button>
-        <Button size="large" variant="contained" color="primary">Quero Vender</Button>
-        </div>
+        <ContainerBut>
+        <BotaoComprar style={{backgroundColor: "#43ADA5"}} size="large" variant="contained" color="primary">Quero Comprar</BotaoComprar>
+        <BotaoVender style={{backgroundColor: "#FCCA64"}} size="large" variant="contained" color="primary">Quero Vender</BotaoVender>
+        </ContainerBut>
 
       </Inicial>
       
