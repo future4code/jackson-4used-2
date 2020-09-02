@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 import GridDeCategorias from './GridDeCategorias'
 import PaginaDeProdutos from './PaginaDeProdutos'
-import GridDeProdutos from './GridDeProdutos'
 import FormularioDeCriacao from './FormularioDeCriacao'
 import Carrinho from './Carrinho'
 
