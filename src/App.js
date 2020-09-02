@@ -4,21 +4,20 @@ import PaginaInicial from './components/PaginaInicial'
 import Layout from './components/Layout'
 
 class App extends React.Component {
-	constructor(props) {
-		super(props)
+    constructor(props) {
+        super(props)
 
-		this.state = {
-			pagina: 2
-		}
-	}
+        this.state = {
+            pagina: 1
+        }
+    }
 
-	render() {
-		return (
-			<React.Fragment>
-				{this.state.pagina === 1 ? <PaginaInicial /> : <Layout />}
-			</React.Fragment>
-		)
-	}
+    render() {
+        return ( <
+            React.Fragment > { this.state.pagina === 1 ? < PaginaInicial / > : < Layout / > } <
+            /React.Fragment>
+        )
+    }
 
 }
 
