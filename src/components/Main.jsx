@@ -18,7 +18,6 @@ class Main extends Component {
       <Container>
         <GridDeCategorias></GridDeCategorias>
         <PaginaDeProdutos></PaginaDeProdutos>
-        <GridDeProdutos></GridDeProdutos>
         <FormularioDeCriacao></FormularioDeCriacao>
         <Carrinho></Carrinho>
       </Container>
