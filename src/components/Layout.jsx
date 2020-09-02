@@ -15,7 +15,6 @@ class Layout extends Component {
   render() {
     return (
       <Container>
-        <h1>Layout</h1>
         <Header />
         <Main />
         <Footer />
