@@ -22,17 +22,13 @@ img{
 class Produto extends Component {
   render() {
     return (
-     
         <Caixa>
-          <img src='https://picsum.photos/200/100'/>
+          <img src='https://picsum.photos/200/100' alt="produto"/>
           <p>Nome do Produto</p>
           <p>Preço do Produto</p>
           <p>Descrição dos produtos</p>
           <button>Adcionar ao carrinho</button>
         </Caixa>
-        
-        
-     
     )
   }
 }

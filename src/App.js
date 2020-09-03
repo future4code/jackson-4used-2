@@ -9,6 +9,7 @@ class App extends React.Component {
 
     this.state = {
       pagina: 1,
+      categoriaAtual: null
     };
   }
 
@@ -17,13 +18,20 @@ class App extends React.Component {
     this.setState({ pagina });
   };
 
+  irParaPaginaDaCategoria = (categoria) => {
+    this.setState({
+      pagina: 2,
+      categoriaAtual: categoria
+    })
+  }
+
   render() {
     return (
       <React.Fragment>
         {this.state.pagina === 1 ? (
           <PaginaInicial mudarPagina={this.mudarPagina} />
         ) : (
-          <Layout  paginaAtual = {this.state.pagina}/>
+          <Layout mudarPagina={this.mudarPagina} irParaPaginaDaCategoria={this.irParaPaginaDaCategoria} categoriaAtual={this.state.categoriaAtual} paginaAtual={this.state.pagina}/>
         )}
       </React.Fragment>
     );

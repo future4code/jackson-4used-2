@@ -13,7 +13,7 @@ class PaginaDeProdutos extends Component {
   render() {
     return (
       <Container>
-        <h2>Título da Categoria</h2>
+        <h2>{this.props.categoriaAtual}</h2>
         <Filtros />
         <GridDeProdutos />
       </Container>

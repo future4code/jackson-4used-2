@@ -17,18 +17,28 @@ class Header extends Component {
   render() {
     return (
       <Container>
-        <img src={LogoSemLogoMarca} width='60px' height='40px' ></img>
+        <img src={LogoSemLogoMarca} width='60px' height='40px' alt='logo' ></img>
         <TextField label="Buscar" size="small" variant="outlined" />
-        <Button>inicio</Button>
-        <Button>Moças</Button>
-        <Button>Rapazes</Button>
-        <Button>Kids</Button>
+        <Button onClick={() => this.props.mudarPagina("CONSUMIDOR")}>inicio</Button>
+        <Button onClick={() => this.props.irParaPaginaDaCategoria('moças')}>Moças</Button>
+        <Button onClick={() => this.props.irParaPaginaDaCategoria('rapazes')}>Rapazes</Button>
+        <Button onClick={() => this.props.irParaPaginaDaCategoria('kids')}>Kids</Button>
         <Button>
           <LocalGroceryStoreIcon color='primary'/>
         </Button>
-        <Button variant="contained" color="primary">
-          Quero Vender
-        </Button>
+        {
+          this.props.paginaAtual === 3 
+          ? (
+            <Button onClick={() => this.props.mudarPagina("CONSUMIDOR")} variant="contained" color="primary">
+              Quero Comprar
+            </Button>
+          )
+          : (
+            <Button onClick={() => this.props.mudarPagina("FORNECEDOR")} variant="contained" color="secondary">
+              Quero Vender
+            </Button>
+          )
+        }
       </Container>
     )
   }

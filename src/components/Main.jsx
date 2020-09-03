@@ -8,7 +8,6 @@ import Carrinho from './Carrinho'
 
 const Container = styled.main`
   display: flex;
-  
   align-items: center;
   flex-grow: 1;
   margin-left: 10vw;
@@ -27,17 +26,13 @@ class Main extends Component {
   escolheComponenteParaRenderizar = () =>{
     switch (this.props.paginaAtual){
       case 2:
-        return <PaginaDeProdutos/>
+        return <PaginaDeProdutos categoriaAtual={this.props.categoriaAtual}/>
       case 3:
         return <FormularioDeCriacao/>
       default:
-        return <GridDeCategorias/>
+        return <GridDeCategorias irParaPaginaDaCategoria={this.props.irParaPaginaDaCategoria}/>
     }
   }
-
-
-  
-
 
   render() {
     return (

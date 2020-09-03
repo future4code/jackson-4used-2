@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from "styled-components"
 import image from '../img/LogoComLogoMarca.png';
 import {Button} from '@material-ui/core';
@@ -31,12 +31,10 @@ background-color: #FCCA64;
 
 export default function PaginaInicial(props)  {
 
-
-    
     return (
       <Inicial>
 
-        <p><img src={image} style={{width: "25vw", height: "30vh", objectFit: "contain", marginBottom: "10vh"}} /></p>
+        <p><img src={image} style={{width: "25vw", height: "30vh", objectFit: "contain", marginBottom: "10vh"}} alt='logo' /></p>
         
         <ContainerBut>
         <BotaoComprar onClick={() => props.mudarPagina("CONSUMIDOR")} style={{backgroundColor: "#43ADA5"}} size="large" variant="contained"  color="primary">Quero Comprar</BotaoComprar>

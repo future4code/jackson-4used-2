@@ -17,7 +17,7 @@ class Footer extends Component {
   render() {
     return (
       <Container>
-        <p><strong>DESENVOLVIDO COM <img src={coracaoFooter} width="15px"></img> PELA EQUIPE DE MARAVILHOSIDADES</strong></p> 
+        <p><strong>DESENVOLVIDO COM <img src={coracaoFooter} width="15px" alt='coracao'></img> PELA EQUIPE DE MARAVILHOSIDADES</strong></p> 
       </Container>
     )
   }
