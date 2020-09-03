@@ -6,7 +6,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   flex-grow: 1;
-  border: 2px solid black;
+
 `;
 
 const Formulario = styled.form`
@@ -22,7 +22,7 @@ text-align: center;
 `;
 
 const Input = styled(TextField)`
-width: 80vw;
+width: 60vw;
 `
 const Botao = styled(Button)`
 width: 200px;
@@ -36,13 +36,13 @@ class FormularioDeCriacao extends Component {
         <Formulario>
           <Titulo>cadastro do produto</Titulo>
 
-          <Input id="outlined-basic" label="Nome do Produto" variant="outlined" />
-          <Input id="outlined-basic" label="Descrição" variant="outlined" />
-          <Input id="outlined-basic" label="Preço (R$)" variant="outlined" type="number"/>
-          <Input id="outlined-basic" label="Metodo de Pagamento" variant="outlined" />
-          <Input id="outlined-basic" label="Categoria" variant="outlined" />
-          <Input id="outlined-basic" label="Fotos" variant="outlined" />
-          <Input id="outlined-basic" label="Quantidade" variant="outlined" />
+          <Input label="Descrição" variant="outlined" />
+          <Input label="Preço (R$)" variant="outlined" type="number"/>
+          <Input label="Nome do Produto" variant="outlined" />
+          <Input label="Metodo de Pagamento" variant="outlined" />
+          <Input label="Categoria" variant="outlined" />
+          <Input label="Fotos" variant="outlined" />
+          <Input label="Quantidade" variant="outlined" />
           <Botao variant="contained">Criar Produto</Botao>
 
         </Formulario>

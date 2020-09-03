@@ -5,7 +5,8 @@ import GridDeProdutos from './GridDeProdutos'
 import Filtros from './Filtros'
 
 const Container = styled.div`
-  border: 1px solid black;
+ display:flex;
+ flex-direction:column;
 `
 
 class PaginaDeProdutos extends Component {
