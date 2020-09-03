@@ -17,7 +17,7 @@ class Layout extends Component {
     return (
       <Container>
         <Header />
-        <Main />
+        <Main paginaAtual ={this.props.paginaAtual}/>
         <Footer />
       </Container>
     )
