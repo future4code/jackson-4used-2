@@ -31,8 +31,6 @@ background-color: #FCCA64;
 
 export default function PaginaInicial(props)  {
 
-
-    
     return (
       <Inicial>
 

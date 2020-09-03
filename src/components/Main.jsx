@@ -8,7 +8,6 @@ import Carrinho from './Carrinho'
 
 const Container = styled.main`
   display: flex;
-  
   align-items: center;
   flex-grow: 1;
   margin-left: 10vw;
@@ -34,10 +33,6 @@ class Main extends Component {
         return <GridDeCategorias/>
     }
   }
-
-
-  
-
 
   render() {
     return (
