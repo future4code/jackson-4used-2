@@ -19,9 +19,6 @@ const Container = styled.main`
 
 
 class Main extends Component {
-  state = {
-    mostrarCarrinho: true,
-  }
 
   escolheComponenteParaRenderizar = () =>{
     switch (this.props.paginaAtual){
@@ -34,11 +31,13 @@ class Main extends Component {
     }
   }
 
+
+
   render() {
     return (
       <Container>
         {this.escolheComponenteParaRenderizar()}
-        {(this.state.mostrarCarrinho && this.props.paginaAtual !== 3) &&  <Carrinho/>}
+        {(this.props.mostrarCarrinho && this.props.paginaAtual !== 3) &&  <Carrinho/>}
       </Container>
     )
   }
