@@ -12,6 +12,15 @@ const Container = styled.div`
 
 `
 class Layout extends Component {
+  state = {
+    mostrarCarrinho: false,
+  }
+
+
+  mudarVisibilidadeDoCarrinho = () => {
+    this.setState({mostrarCarrinho: !this.state.mostrarCarrinho})
+  }
+
   render() {
     return (
       <Container>
@@ -19,8 +28,10 @@ class Layout extends Component {
           irParaPaginaDaCategoria={this.props.irParaPaginaDaCategoria}
           mudarPagina={this.props.mudarPagina}
           paginaAtual={this.props.paginaAtual}
+          mostrarCarrinho={this.mudarVisibilidadeDoCarrinho}
         />
         <Main
+          mostrarCarrinho={this.state.mostrarCarrinho}
           categoriaAtual={this.props.categoriaAtual}
           irParaPaginaDaCategoria={this.props.irParaPaginaDaCategoria}
           paginaAtual={this.props.paginaAtual}

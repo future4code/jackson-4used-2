@@ -23,7 +23,7 @@ class Header extends Component {
         <Button onClick={() => this.props.irParaPaginaDaCategoria('moças')}>Moças</Button>
         <Button onClick={() => this.props.irParaPaginaDaCategoria('rapazes')}>Rapazes</Button>
         <Button onClick={() => this.props.irParaPaginaDaCategoria('kids')}>Kids</Button>
-        <Button>
+        <Button onClick={this.props.mostrarCarrinho}>
           <LocalGroceryStoreIcon color='primary'/>
         </Button>
         {
