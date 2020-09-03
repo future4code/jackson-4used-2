@@ -7,18 +7,44 @@ import FormularioDeCriacao from './FormularioDeCriacao'
 import Carrinho from './Carrinho'
 
 const Container = styled.main`
-  border: 1px solid black;
+  display: flex;
+  
+  align-items: center;
   flex-grow: 1;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  padding: 15px;
+  gap: 15px ;
 `
 
+
+
 class Main extends Component {
+  state = {
+    paginaAtual : 2,
+    mostrarCarrinho: true,
+  }
+
+  escolheComponenteParaRenderizar = () =>{
+    switch (this.state.paginaAtual){
+      case 2:
+        return <PaginaDeProdutos/>
+      case 3:
+        return <FormularioDeCriacao/>
+      default:
+        return <GridDeCategorias/>
+    }
+  }
+
+
+  
+
+
   render() {
     return (
       <Container>
-        <GridDeCategorias></GridDeCategorias>
-        <PaginaDeProdutos></PaginaDeProdutos>
-        <FormularioDeCriacao></FormularioDeCriacao>
-        <Carrinho></Carrinho>
+        {this.escolheComponenteParaRenderizar()}
+        {(this.state.mostrarCarrinho && this.state.paginaAtual !== 3) &&  <Carrinho/>}
       </Container>
     )
   }

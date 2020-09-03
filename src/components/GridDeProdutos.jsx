@@ -5,8 +5,9 @@ import Produto from './Produto'
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns:  1fr 1fr 1fr 1fr;
-  border: 1px solid black;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+
 `
 
 class GridDeProdutos extends Component {
