@@ -26,11 +26,11 @@ class Main extends Component {
   escolheComponenteParaRenderizar = () =>{
     switch (this.props.paginaAtual){
       case 2:
-        return <PaginaDeProdutos/>
+        return <PaginaDeProdutos categoriaAtual={this.props.categoriaAtual}/>
       case 3:
         return <FormularioDeCriacao/>
       default:
-        return <GridDeCategorias/>
+        return <GridDeCategorias irParaPaginaDaCategoria={this.props.irParaPaginaDaCategoria}/>
     }
   }
 

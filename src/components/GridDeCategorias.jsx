@@ -7,8 +7,6 @@ import IconButton from '@material-ui/core/IconButton';
 import Launch from '@material-ui/icons/Launch';
 
 const Container = styled.div`
-  cursor: pointer;
-
   display: flex;
   justify-content: center;
 `
@@ -22,7 +20,7 @@ class GridDeCategorias extends Component {
             <GridListTileBar
               title='moças'
               actionIcon={
-                <IconButton aria-label={`go to moças`}>
+                <IconButton onClick={() => this.props.irParaPaginaDaCategoria('moças')} aria-label={`go to moças`}>
                   <Launch color="primary" />
                 </IconButton>
               }
@@ -33,7 +31,7 @@ class GridDeCategorias extends Component {
             <GridListTileBar
               title='rapazes'
               actionIcon={
-                <IconButton aria-label={`go to rapazes`}>
+                <IconButton onClick={() => this.props.irParaPaginaDaCategoria('rapazes')} aria-label={`go to rapazes`}>
                   <Launch color="primary" />
                 </IconButton>
               }
@@ -44,7 +42,7 @@ class GridDeCategorias extends Component {
             <GridListTileBar
               title='kids'
               actionIcon={
-                <IconButton aria-label={`go to kids`}>
+                <IconButton onClick={() => this.props.irParaPaginaDaCategoria('kids')} aria-label={`go to kids`}>
                   <Launch color="primary" />
                 </IconButton>
               }

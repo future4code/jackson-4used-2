@@ -11,13 +11,20 @@ const Container = styled.div`
   min-height: 100vh;
 
 `
-
 class Layout extends Component {
   render() {
     return (
       <Container>
-        <Header />
-        <Main paginaAtual ={this.props.paginaAtual}/>
+        <Header
+          irParaPaginaDaCategoria={this.props.irParaPaginaDaCategoria}
+          mudarPagina={this.props.mudarPagina}
+          paginaAtual={this.props.paginaAtual}
+        />
+        <Main
+          categoriaAtual={this.props.categoriaAtual}
+          irParaPaginaDaCategoria={this.props.irParaPaginaDaCategoria}
+          paginaAtual={this.props.paginaAtual}
+        />
         <Footer />
       </Container>
     )
