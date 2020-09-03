@@ -29,7 +29,7 @@ background-color: #FCCA64;
 
 `
 
-export default function PaginaInicial()  {
+export default function PaginaInicial(props)  {
 
 
     
@@ -39,8 +39,8 @@ export default function PaginaInicial()  {
         <p><img src={image} style={{width: "25vw", height: "30vh", objectFit: "contain", marginBottom: "10vh"}} /></p>
         
         <ContainerBut>
-        <BotaoComprar style={{backgroundColor: "#43ADA5"}} size="large" variant="contained" color="primary">Quero Comprar</BotaoComprar>
-        <BotaoVender style={{backgroundColor: "#FCCA64"}} size="large" variant="contained" color="primary">Quero Vender</BotaoVender>
+        <BotaoComprar onClick={() => props.mudarPagina("CONSUMIDOR")} style={{backgroundColor: "#43ADA5"}} size="large" variant="contained"  color="primary">Quero Comprar</BotaoComprar>
+        <BotaoVender onClick ={() => props.mudarPagina("FORNECEDOR")} style={{backgroundColor: "#FCCA64"}} size="large" variant="contained" color="primary">Quero Vender</BotaoVender>
         </ContainerBut>
 
       </Inicial>

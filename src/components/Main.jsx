@@ -21,12 +21,11 @@ const Container = styled.main`
 
 class Main extends Component {
   state = {
-    paginaAtual : 2,
     mostrarCarrinho: true,
   }
 
   escolheComponenteParaRenderizar = () =>{
-    switch (this.state.paginaAtual){
+    switch (this.props.paginaAtual){
       case 2:
         return <PaginaDeProdutos/>
       case 3:
@@ -44,7 +43,7 @@ class Main extends Component {
     return (
       <Container>
         {this.escolheComponenteParaRenderizar()}
-        {(this.state.mostrarCarrinho && this.state.paginaAtual !== 3) &&  <Carrinho/>}
+        {(this.state.mostrarCarrinho && this.props.paginaAtual !== 3) &&  <Carrinho/>}
       </Container>
     )
   }
