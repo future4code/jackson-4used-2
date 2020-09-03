@@ -44,8 +44,11 @@ class Filtros extends Component {
             size="small"
             variant="outlined"
             InputProps={{
-              startAdornment: <InputAdornment position="start">R$</InputAdornment>
+              startAdornment: <InputAdornment position="start">R$</InputAdornment>,
+              min: 0
             }}
+            inputProps={{ min: 0}}
+            type="number"
           />
           <TextField
             label="Valor Mínimo"
@@ -54,6 +57,8 @@ class Filtros extends Component {
             InputProps={{
               startAdornment: <InputAdornment position="start">R$</InputAdornment>
             }}
+            inputProps={{ min: 0}}
+            type="number"
           />
         </div>
         

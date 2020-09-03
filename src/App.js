@@ -8,14 +8,15 @@ class App extends React.Component {
         super(props)
 
         this.state = {
-            pagina: 1
+            pagina: 2
         }
     }
 
     render() {
-        return ( <
-            React.Fragment > { this.state.pagina === 1 ? < PaginaInicial / > : < Layout / > } <
-            /React.Fragment>
+        return (
+            <React.Fragment> 
+                { this.state.pagina === 1 ? < PaginaInicial /> : < Layout /> } 
+            </React.Fragment>
         )
     }
 
