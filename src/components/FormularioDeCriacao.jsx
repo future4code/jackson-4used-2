@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { TextField, Button } from "@material-ui/core";
+import axios from "axios"
 
 const Container = styled.div`
   display: flex;
@@ -30,20 +31,82 @@ width: 200px;
 `
 
 class FormularioDeCriacao extends Component {
+
+  state = {
+    name:"",
+    description:"",
+    price: 0,
+    paymentMethod: "",
+    category:"",
+    photos: [],
+    installments: 0, 
+  }
+
+  onChangeInputName = (e) => {
+    this.setState({name: e.target.value})
+}
+  onChangeInputDescription = (e) => {
+    this.setState({description: e.target.value})
+}
+  onChangeInputPrice = (e) => {
+    this.setState({price: e.target.value})
+}
+  onChangeInputPaymentMethod = (e) => {
+    this.setState({paymentMethod: e.target.value})
+}
+  onChangeInputCategory = (e) => {
+    this.setState({category: e.target.value})
+}
+  onChangeInputPhotos = (e) => {
+    this.setState({photos: e.target.value})
+}
+  onChangeInputInstallments = (e) => {
+    this.setState({installments: e.target.value})
+}
+
+addProduto = () =>{
+  const body = {
+    name:this.state.name,
+    description:this.state.description,
+    price:this.state.price,
+    paymentMethod:this.state.paymentMethod,
+    category:this.state.category,
+    photos:[this.state.photos],
+    installments:this.state.installments
+  }  
+  
+    axios.post("https://us-central1-labenu-apis.cloudfunctions.net/fourUsedTwo/products", body)
+   
+      .then((resposta) => {              
+        alert("Produto Adicionado")
+        this.setState({name:"",
+        description:"",
+        price: 0,
+        paymentMethod: "",
+        category:"",
+        photos: [] ,
+        installments: 0})
+      })
+      .catch((erro) => {
+        alert("Algo deu errado jovem")
+      })
+}
+
+
   render() {
     return (
       <Container>
         <Formulario>
           <Titulo>cadastro do produto</Titulo>
 
-          <Input label="Descrição" variant="outlined" />
-          <Input label="Preço (R$)" variant="outlined" type="number"/>
-          <Input label="Nome do Produto" variant="outlined" />
-          <Input label="Metodo de Pagamento" variant="outlined" />
-          <Input label="Categoria" variant="outlined" />
-          <Input label="Fotos" variant="outlined" />
-          <Input label="Quantidade" variant="outlined" />
-          <Botao variant="contained">Criar Produto</Botao>
+          <Input value ={this.state.description} onChange={this.onChangeInputDescription} label="Descrição" variant="outlined" />
+          <Input value ={this.state.price} onChange={this.onChangeInputPrice} label="Preço (R$)" variant="outlined" type="number"/>
+          <Input value ={this.state.name} onChange={this.onChangeInputName} label="Nome do Produto" variant="outlined" />
+          <Input value ={this.state.paymentMethod} onChange={this.onChangeInputPaymentMethod} label="Metodo de Pagamento" variant="outlined" />
+          <Input value ={this.state.category} onChange={this.onChangeInputCategory} label="Categoria" variant="outlined" />
+          <Input value ={this.state.photos} onChange={this.onChangeInputPhotos} label="Fotos" variant="outlined" />
+          <Input value ={this.state.installments} onChange={this.onChangeInputInstallments} label="Quantidade" variant="outlined" />
+          <Botao onClick={this.addProduto} variant="contained">Criar Produto</Botao>
 
         </Formulario>
       </Container>
