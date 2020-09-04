@@ -79,7 +79,12 @@ class Main extends Component {
   escolheComponenteParaRenderizar = () => {
     switch (this.props.paginaAtual) {
       case 2:
-        return <PaginaDeProdutos categoriaAtual={this.props.categoriaAtual} />;
+        return (
+          <PaginaDeProdutos
+            adicionarProdutoAoCarrinho={this.adicionarProdutoAoCarrinho}
+            categoriaAtual={this.props.categoriaAtual}
+          />
+        );
       case 3:
         return <FormularioDeCriacao />;
       default:
