@@ -15,7 +15,7 @@ class PaginaDeProdutos extends Component {
       <Container>
         <h2>{this.props.categoriaAtual}</h2>
         <Filtros />
-        <GridDeProdutos adicionarProdutoAoCarrinho={this.props.adicionarProdutoAoCarrinho} />
+        <GridDeProdutos categoriaAtual={this.props.categoriaAtual} adicionarProdutoAoCarrinho={this.props.adicionarProdutoAoCarrinho} />
       </Container>
     );
   }

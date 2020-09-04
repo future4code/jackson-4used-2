@@ -36,7 +36,9 @@ class GridDeProdutos extends Component {
   render() {
     return (
       <Container>
-        {this.state.listaDeProdutos.map((item) => (
+        {this.state.listaDeProdutos
+          .filter(item => item.category === this.props.categoriaAtual)
+          .map((item) => (
           <Produto
             key={item.id}
             adicionarProdutoAoCarrinho={this.props.adicionarProdutoAoCarrinho}
