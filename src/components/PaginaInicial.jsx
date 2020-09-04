@@ -34,11 +34,13 @@ export default function PaginaInicial(props)  {
     return (
       <Inicial>
 
-        <p><img src={image} style={{width: "25vw", height: "30vh", objectFit: "contain", marginBottom: "10vh"}} alt='logo' /></p>
+        <p><img src={image}  style={{width: "25vw", height: "30vh", objectFit: "contain", marginBottom: "10vh"}} alt='logo' /></p>
         
         <ContainerBut>
-        <BotaoComprar onClick={() => props.mudarPagina("CONSUMIDOR")} style={{backgroundColor: "#43ADA5"}} size="large" variant="contained"  color="primary">Quero Comprar</BotaoComprar>
-        <BotaoVender onClick ={() => props.mudarPagina("FORNECEDOR")} style={{backgroundColor: "#FCCA64"}} size="large" variant="contained" color="primary">Quero Vender</BotaoVender>
+
+            <BotaoComprar onClick={() => props.mudarPagina("CONSUMIDOR")} style={{backgroundColor: "#43ADA5"}} size="large" variant="contained"  color="primary">Quero Comprar</BotaoComprar>
+            <BotaoVender onClick ={() => props.mudarPagina("FORNECEDOR")} style={{backgroundColor: "#FCCA64"}} size="large" variant="contained" color="primary">Quero Vender</BotaoVender>
+          
         </ContainerBut>
 
       </Inicial>

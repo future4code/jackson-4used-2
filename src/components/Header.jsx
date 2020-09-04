@@ -17,7 +17,7 @@ class Header extends Component {
   render() {
     return (
       <Container>
-        <img src={LogoSemLogoMarca} width='60px' height='40px' alt='logo' ></img>
+        <img onClick={() => this.props.mudarPagina("CONSUMIDOR")} src={LogoSemLogoMarca} width='60px' height='40px' alt='logo' ></img>
         <TextField label="Buscar" size="small" variant="outlined" />
         <Button onClick={() => this.props.mudarPagina("CONSUMIDOR")}>inicio</Button>
         <Button onClick={() => this.props.irParaPaginaDaCategoria('moças')}>Moças</Button>
