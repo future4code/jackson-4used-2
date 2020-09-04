@@ -78,7 +78,7 @@ addProduto = () =>{
     axios.post("https://us-central1-labenu-apis.cloudfunctions.net/fourUsedTwo/products", body)
    
       .then((resposta) => {              
-        alert("Produto Adicionado")
+        alert("opa! Lembre que uma parte é minha e volte sempre!")
         this.setState({name:"",
         description:"",
         price: 0,
@@ -88,7 +88,7 @@ addProduto = () =>{
         installments: 0})
       })
       .catch((erro) => {
-        alert("Algo deu errado jovem")
+        alert("Algo deu errado jovem, tenta denovo!")
       })
 }
 

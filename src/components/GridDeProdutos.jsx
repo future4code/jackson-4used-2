@@ -26,17 +26,41 @@ class GridDeProdutos extends Component {
       )
       .then((response) => {
         this.setState({ listaDeProdutos: response.data.products });
-        console.log(response);
       })
       .catch((error) => {
         alert("Erro ao buscar produtos");
       });
   };
 
+  produtosParaRenderizar = () => {
+    const produtos = [...this.state.listaDeProdutos]
+
+    switch (this.props.ordenacao) {
+      case 'maiorPreco':
+        return produtos.sort((a, b) => b.price - a.price) 
+      case 'menorPreco':
+        return produtos.sort((a, b) => a.price - b.price) 
+      case 'nome':
+        return produtos.sort((a, b) => {
+          if (a.name > b.name) {
+            return 1
+          } else {
+            return -1
+          }
+        })
+      default:
+        return produtos
+    }
+  }
+
   render() {
     return (
       <Container>
-        {this.state.listaDeProdutos.map((item) => (
+        {this.produtosParaRenderizar()
+          .filter(item => item.category === this.props.categoriaAtual)
+          .filter(item => item.name.toLowerCase().includes(this.props.filtroDeBusca.toLowerCase()) || item.description.toLowerCase().includes(this.props.filtroDeBusca.toLowerCase()))
+          .filter(item => Number(this.props.filtroDeValorMaximo) === 0 ? true : item.price >= this.props.filtroDeValorMinimo && item.price <= this.props.filtroDeValorMaximo)
+          .map((item) => (
           <Produto
             key={item.id}
             adicionarProdutoAoCarrinho={this.props.adicionarProdutoAoCarrinho}

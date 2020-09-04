@@ -49,8 +49,12 @@ class Main extends Component {
   };
 
   limparCarrinho = () => {
-    alert('Compra finalizada com sucesso!')
-    this.setState({carrinho: []})
+    if (this.state.carrinho.length === 0) {
+      alert('Oxe! Tu comprasse nada e já quer pagar?')
+    } else {
+      alert('Valeu por encher meu bolso!')
+      this.setState({carrinho: []})
+    }
   }
 
   escolheComponenteParaRenderizar = () => {
@@ -60,6 +64,7 @@ class Main extends Component {
           <PaginaDeProdutos
             adicionarProdutoAoCarrinho={this.adicionarProdutoAoCarrinho}
             categoriaAtual={this.props.categoriaAtual}
+            filtroDeBusca={this.props.filtroDeBusca}
           />
         );
       case 3:
