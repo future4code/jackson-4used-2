@@ -18,35 +18,7 @@ const Container = styled.main`
 
 class Main extends Component {
   state = {
-    carrinho: [
-      {
-        nome: "calçarasgada",
-        id: 1,
-        preco: 10,
-        quantidade: 1,
-      },
-
-      {
-        nome: "jeans",
-        id: 2,
-        preco: 10,
-        quantidade: 1,
-      },
-
-      {
-        nome: "camiseta",
-        id: 3,
-        preco: 10,
-        quantidade: 1,
-      },
-
-      {
-        nome: "blusa",
-        id: 4,
-        preco: 10,
-        quantidade: 1,
-      },
-    ],
+    carrinho: [],
   };
 
   adicionarProdutoAoCarrinho = (nome, id, preco) => {
@@ -75,6 +47,11 @@ class Main extends Component {
       carrinho: novoCarrinho.filter((iten) => iten.quantidade > 0),
     });
   };
+
+  limparCarrinho = () => {
+    alert('Compra finalizada com sucesso!')
+    this.setState({carrinho: []})
+  }
 
   escolheComponenteParaRenderizar = () => {
     switch (this.props.paginaAtual) {
@@ -105,6 +82,7 @@ class Main extends Component {
             carrinho={this.state.carrinho}
             adicionarQuantidade={this.adicionarQuantidade}
             diminuirQuantidade={this.diminuirQuantidade}
+            limparCarrinho={this.limparCarrinho}
           />
         )}
       </Container>
