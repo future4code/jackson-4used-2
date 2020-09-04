@@ -14,6 +14,7 @@ const Container = styled.div`
 class Layout extends Component {
   state = {
     mostrarCarrinho: false,
+    inputDeBusca: ''
   }
 
 
@@ -21,10 +22,16 @@ class Layout extends Component {
     this.setState({mostrarCarrinho: !this.state.mostrarCarrinho})
   }
 
+  alteraInputDeBusca = (e) => {
+    this.setState({inputDeBusca: e.target.value})
+  }
+
   render() {
     return (
       <Container>
         <Header
+          inputDeBusca={this.state.inputDeBusca}
+          alteraInputDeBusca={this.alteraInputDeBusca}
           irParaPaginaDaCategoria={this.props.irParaPaginaDaCategoria}
           mudarPagina={this.props.mudarPagina}
           paginaAtual={this.props.paginaAtual}
@@ -35,6 +42,7 @@ class Layout extends Component {
           categoriaAtual={this.props.categoriaAtual}
           irParaPaginaDaCategoria={this.props.irParaPaginaDaCategoria}
           paginaAtual={this.props.paginaAtual}
+          filtroDeBusca={this.state.inputDeBusca}
         />
         <Footer />
       </Container>

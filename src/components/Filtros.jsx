@@ -29,35 +29,33 @@ class Filtros extends Component {
       selectOrdenar: ''
     }
   }
-  
-  handleSelect = (e) => {
-    console.log('Mudou')
-    this.setState({ selectOrdenar: e.target.value })
-  }
 
   render() {
     return (
       <Container>
         <div>
           <TextField
+            value={this.props.inputDeValorMaximo}
+            onChange={this.props.alteraValorMaximo}
             label="Valor Máximo"
             size="small"
             variant="outlined"
             InputProps={{
               startAdornment: <InputAdornment position="start">R$</InputAdornment>,
-              min: 0
             }}
-            inputProps={{ min: 0}}
+            inputProps={{ min: this.props.inputDeValorMinimo, step: 100 }}
             type="number"
           />
           <TextField
+            value={this.props.inputDeValorMinimo}
+            onChange={this.props.alteraValorMinimo}
             label="Valor Mínimo"
             size="small"
             variant="outlined"
             InputProps={{
               startAdornment: <InputAdornment position="start">R$</InputAdornment>
             }}
-            inputProps={{ min: 0}}
+            inputProps={{ min: 0, max: this.props.inputDeValorMaximo, step: 100}}
             type="number"
           />
         </div>
@@ -67,8 +65,8 @@ class Filtros extends Component {
           <Select
             id="ordenar"
             labelId="ordenar"
-            value={this.state.selectOrdenar}
-            onChange={this.handleSelect}
+            value={this.props.inputDeOrdenacao}
+            onChange={this.props.alteraOrdenacao}
             displayEmpty
           >
             <MenuItem value="">Não ordenar</MenuItem>

@@ -10,12 +10,43 @@ const Container = styled.div`
 `;
 
 class PaginaDeProdutos extends Component {
+  state = {
+    inputDeValorMaximo: 0,
+    inputDeValorMinimo: 0,
+    inputDeOrdenacao: ''
+  }
+  
+  alteraValorMaximo = (e) => {
+    this.setState({inputDeValorMaximo: e.target.value})
+  }
+  alteraValorMinimo = (e) => {
+    this.setState({inputDeValorMinimo: e.target.value})
+  }
+  alteraOrdenacao = (e) => {
+    console.log(e.target.value)
+    this.setState({inputDeOrdenacao: e.target.value})
+  }
+
   render() {
     return (
       <Container>
         <h2>{this.props.categoriaAtual}</h2>
-        <Filtros />
-        <GridDeProdutos categoriaAtual={this.props.categoriaAtual} adicionarProdutoAoCarrinho={this.props.adicionarProdutoAoCarrinho} />
+        <Filtros
+          inputDeValorMaximo={this.state.inputDeValorMaximo}
+          inputDeValorMinimo={this.state.inputDeValorMinimo}
+          inputDeOrdenacao={this.state.inputDeOrdenacao}
+          alteraValorMaximo={this.alteraValorMaximo}
+          alteraValorMinimo={this.alteraValorMinimo}
+          alteraOrdenacao={this.alteraOrdenacao}
+        />
+        <GridDeProdutos
+          filtroDeValorMaximo={this.state.inputDeValorMaximo}
+          filtroDeValorMinimo={this.state.inputDeValorMinimo}
+          ordenacao={this.state.inputDeOrdenacao}
+          filtroDeBusca={this.props.filtroDeBusca}
+          categoriaAtual={this.props.categoriaAtual}
+          adicionarProdutoAoCarrinho={this.props.adicionarProdutoAoCarrinho}
+        />
       </Container>
     );
   }

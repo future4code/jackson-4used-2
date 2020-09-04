@@ -18,7 +18,7 @@ class Header extends Component {
     return (
       <Container>
         <img onClick={() => this.props.mudarPagina("CONSUMIDOR")} src={LogoSemLogoMarca} width='60px' height='40px' alt='logo' ></img>
-        <TextField label="Buscar" size="small" variant="outlined" />
+        {this.props.paginaAtual === 2 && <TextField onChange={this.props.alteraInputDeBusca} value={this.props.inputDeBusca} label="Buscar" size="small" variant="outlined" />}
         <Button onClick={() => this.props.mudarPagina("CONSUMIDOR")}>inicio</Button>
         <Button onClick={() => this.props.irParaPaginaDaCategoria('moças')}>Moças</Button>
         <Button onClick={() => this.props.irParaPaginaDaCategoria('rapazes')}>Rapazes</Button>
