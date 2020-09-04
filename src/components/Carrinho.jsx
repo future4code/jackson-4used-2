@@ -15,6 +15,8 @@ const Botao = styled.button`
 `;
 
 class Carrinho extends Component {
+  calcularValorTotal = () => this.props.carrinho.reduce((total, item) => total + item.preco * item.quantidade ,0)
+
   render() {
     return (
       <Container>
@@ -30,12 +32,12 @@ class Carrinho extends Component {
             </button>
           </div>
         ))}
-        <p>Valor Total</p>
+        <p>Valor Total: R$ {this.calcularValorTotal().toFixed(2)}</p>
         <select>
           <option>à vista</option>
           <option>Cartão</option>
         </select>
-        <Botao>Finalizar Compra</Botao>
+        <Botao onClick={this.props.limparCarrinho}>Finalizar Compra</Botao>
       </Container>
     );
   }
