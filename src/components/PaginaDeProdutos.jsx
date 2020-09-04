@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
-import styled from 'styled-components'
+import React, { Component } from "react";
+import styled from "styled-components";
 
-import GridDeProdutos from './GridDeProdutos'
-import Filtros from './Filtros'
+import GridDeProdutos from "./GridDeProdutos";
+import Filtros from "./Filtros";
 
 const Container = styled.div`
- display:flex;
- flex-direction:column;
-`
+  display: flex;
+  flex-direction: column;
+`;
 
 class PaginaDeProdutos extends Component {
   render() {
@@ -15,10 +15,10 @@ class PaginaDeProdutos extends Component {
       <Container>
         <h2>{this.props.categoriaAtual}</h2>
         <Filtros />
-        <GridDeProdutos />
+        <GridDeProdutos adicionarProdutoAoCarrinho={this.props.adicionarProdutoAoCarrinho} />
       </Container>
-    )
+    );
   }
 }
 
-export default PaginaDeProdutos
+export default PaginaDeProdutos;
